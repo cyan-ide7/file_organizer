@@ -11,7 +11,7 @@ logging.basicConfig(
 
 logger = logging.getLogger()
 
-#  Correct path to the folder, not the .py file
+#  Correct path to the folder to organize 
 target_directory = r"C:\\Users\\LENOVO\\Desktop\\py_test"
 
 # File categories and their extensions
