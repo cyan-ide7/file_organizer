@@ -29,6 +29,16 @@ for folder in categories:
 os.makedirs(os.path.join(target_directory, "Others"), exist_ok=True)
 
 # Organize files based on their type
+def get_unique_filename(filepath):
+    """Generate a unique filename if the file already exists."""
+    base, extension = os.path.splitext(filepath)
+    counter = 1
+    while os.path.exists(filepath):
+        filepath = f"{base}_{counter}{extension}"
+        counter += 1
+    return filepath
+
+
 def organize_files():
     for item in os.listdir(target_directory):
         item_path = os.path.join(target_directory, item)
@@ -41,13 +51,16 @@ def organize_files():
             for folder, extensions in categories.items():
                 if item.lower().endswith(tuple(extensions)):
                     dest = os.path.join(target_directory, folder, item)
+                    dest = get_unique_filename(dest)
                     shutil.move(item_path, dest)
                     logger.info(f"{item} → {folder}")
                     moved = True
                     break
 
             if not moved:
-                shutil.move(item_path, os.path.join(target_directory, "Others", item))
+                dest = os.path.join(target_directory, "Others", item)
+                dest = get_unique_filename(dest)
+                shutil.move(item_path, dest)
                 logger.info(f"{item} → Others")
 
         except Exception as e:
