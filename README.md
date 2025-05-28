@@ -11,6 +11,7 @@ This Python script organizes files in a folder by sorting them into subfolders b
 * os
 * shutil
 * logging
+* tinker
 
 ## How It Works
 
@@ -26,15 +27,14 @@ This Python script organizes files in a folder by sorting them into subfolders b
 * Videos: .mp4, .mov, .avi, .mkv
 * Audio: .mp3, .wav, .aac
 * Others: uncategorized files
+* add custom categories
 
 ## How to Run
 
 1. Update the folder path in the script.
 2. Run using:
 
-```bash
-python file_manager.py
-```
+
 
 ## Output
 
