@@ -28,11 +28,8 @@ This Python script organizes files in a folder by sorting them into subfolders b
 * Audio: .mp3, .wav, .aac
 * Others: uncategorized files
 * add custom categories
+* add and delete categories 
 
-## How to Run
-
-1. Update the folder path in the script.
-2. Run using:
 
 
 
